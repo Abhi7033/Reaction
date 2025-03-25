@@ -3,9 +3,6 @@ import { useState, useEffect } from "react"
 
 function App() {
   return <div>
-    {/* <b>
-    Hii there
-    </b> */}
     <Counter></Counter>
   </div>
 }
@@ -28,7 +25,6 @@ function Counter(){
       setCount(count => count + 1 );
     },1000)
     console.log("mounted");
-    
   },[]);
   
   // function increaseCount(){
