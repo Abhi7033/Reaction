@@ -1,9 +1,17 @@
 import { useState, useEffect } from "react"
 
-
+//conditional rendering
 function App() {
+  let [counterVisible, setCounterVisible] = useState(true);
+
+  useEffect(function(){
+    setInterval(function(){
+      setCounterVisible(c => !c)
+    }, 5000);
+  }, [])
+
   return <div>
-    <Counter></Counter>
+    {counterVisible && <Counter></Counter>}
   </div>
 }
 
@@ -21,10 +29,14 @@ function Counter(){
 
   //guard our setInterval from re-renders
   useEffect(function(){
-    setInterval( function(){
+    let clock = setInterval( function(){
       setCount(count => count + 1 );
-    },1000)
-    console.log("mounted");
+    },1000);
+
+    //clearInterval
+    return function() {
+      clearInterval(clock);
+    }
   },[]);
   
   // function increaseCount(){
