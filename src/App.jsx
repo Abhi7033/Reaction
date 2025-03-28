@@ -38,18 +38,6 @@ function Counter(){
       clearInterval(clock);
     }
   },[]);
-  
-  // function increaseCount(){
-  //   setCount( count + 1 );
-  // }
-
-  // function decreaseCount(){
-  //   setCount( count - 1 );
-  // }
-
-  // function resetCount(){
-  //   setCount(0);
-  // }
 
   return <div>
     <h1 id="text">{count}</h1>
