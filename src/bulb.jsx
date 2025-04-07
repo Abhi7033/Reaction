@@ -10,6 +10,8 @@ function lightBulb(){
 
     const [bulbOn , setBulbOn] = useState(true);
 
+    //bulbOn is a prop to the Bulb state component
+    //bulbOn and setBulbOn is a prop to the ToggleBulbState component
     return <div>
         <BulbState bulbOn={bulbOn} />
         <ToggleBulbState setBulbOn={setBulbOn} />
